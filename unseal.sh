@@ -32,14 +32,20 @@ file_unseal_output_data=unsealoutput.txt
 #fi
 rm unsealoutput.txt
 
+<<<<<<< HEAD
 beginTime=$(date +%s%N)
+=======
+>>>>>>> 277adb2934c81776dddc6f682ca325f078c5079a
 tpm2_unseal -c $file_unseal_key_ctx -o $file_unseal_output_data
 if [ $? != 0 ];then
 echo "unseal fail, please check the environment or parameters!"
 exit 1
 fi
+<<<<<<< HEAD
 endTime=$(date +%s%N)
 elapsed=`echo "($endTime - $beginTime) / 1000000" | bc` 
 elapsedSec=`echo "scale=6;$elapsed / 1000" | bc | awk '{printf "%.6f", $1}'` 
 echo Unseal : $elapsedSec sec
 
+=======
+>>>>>>> 277adb2934c81776dddc6f682ca325f078c5079a

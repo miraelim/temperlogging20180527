@@ -123,11 +123,19 @@ void log_hmac(char *string){
 }
 
 void generate_newkey(){
+<<<<<<< HEAD
     keyobj = fopen("keyobject.txt", "w");
     if(keyobj<0)
 	printf("keyobject.txt openfail\n");
     else
 	printf("keyobj.txt open success\n");
+=======
+     keyobj = fopen("keyobject.txt", "w");
+           if(keyobj<0)
+	         printf("keyobject.txt openfail\n");
+              else
+           printf("keyobj.txt open success\n");
+>>>>>>> 277adb2934c81776dddc6f682ca325f078c5079a
 
 
 
@@ -158,11 +166,19 @@ int main(){
     else
 	printf("hmac open success\n");
 
+<<<<<<< HEAD
     keyobj = fopen("keyobject.txt", "w");
     if(keyobj<0)
 	printf("keyobject.txt openfail\n");
     else
 	printf("keyobj.txt open success\n");
+=======
+     keyobj = fopen("keyobject.txt", "w");
+     if(keyobj<0)
+       printf("keyobject.txt openfail\n");
+        else
+         printf("keyobj.txt open success\n");
+>>>>>>> 277adb2934c81776dddc6f682ca325f078c5079a
 
     makeRootkey();
     get_filelock();
@@ -174,6 +190,7 @@ int main(){
 	fprintf(temp1, "%s", string);
 
 	log_hmac(string);
+<<<<<<< HEAD
     }
     get_fileunlock();
     //    generate_newkey();
@@ -184,5 +201,18 @@ int main(){
     gap = (float) (endtime - starttime)/(CLOCKS_PER_SEC);
     printf("time: %f\n",gap);
 
+=======
+	//	generate_newkey();
+	// save_keyobject();
+	endtime = clock();
+	gap = (float) (endtime - starttime)/(CLOCKS_PER_SEC);
+	printf("time: %f\n",gap);
+    }
+    get_fileunlock();
+//    generate_newkey();
+    fclose(hmac);
+    fclose(temp1);
+    fclose(keyobj);
+>>>>>>> 277adb2934c81776dddc6f682ca325f078c5079a
     return 0;
 }
